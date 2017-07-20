@@ -16,11 +16,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 
 @Controller//define that it is class is bean
-public class BookController {
+public class BooksController {
+
+    private BookService bookService;
 
     @Autowired
     @Qualifier(value = "bookService")
-    private BookService bookService;
     public void setBookService(BookService bookService) {
         this.bookService = bookService;
     }
@@ -33,6 +34,7 @@ public class BookController {
         return "books";
     }
 
+    //ModelAttribute for creating obj with name "book"
     @RequestMapping(value = "/books/add",method = RequestMethod.POST)
     public String addBook(@ModelAttribute("book") Book book){
         if (book.getId() == 0){
@@ -45,6 +47,7 @@ public class BookController {
     }
 
     @RequestMapping("/remove/{id}")
+    //PathVariable for getting data from url
     public String removeBook(@PathVariable("id") int id){
         this.bookService.removeBook(id);
 
@@ -65,5 +68,4 @@ public class BookController {
 
         return "bookdata";
     }
-
 }

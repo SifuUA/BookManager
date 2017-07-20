@@ -3,8 +3,8 @@ package com.okres.books.service;
 import com.okres.books.dao.BookDao;
 import com.okres.books.model.Book;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.Transient;
 import java.util.List;
 
 /**
@@ -20,31 +20,35 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    @Transient
+    @Transactional
     public void addBook(Book book) {
         bookDao.addBook(book);
     }
 
     @Override
-    @Transient
+    @Transactional
+
     public void updateBook(Book book) {
         bookDao.updateBook(book);
     }
 
     @Override
-    @Transient
+    @Transactional
+
     public List<Book> listBooks() {
         return bookDao.listBooks();
     }
 
     @Override
-    @Transient
+    @Transactional
+
     public Book getBookByID(int id) {
         return bookDao.getBookByID(id);
     }
 
     @Override
-    @Transient
+    @Transactional
+
     public void removeBook(int id) {
         bookDao.removeBook(id);
     }

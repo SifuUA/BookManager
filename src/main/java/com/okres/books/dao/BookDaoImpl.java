@@ -42,7 +42,7 @@ public class BookDaoImpl implements BookDao {
     @Override
     public List<Book> listBooks() {
         Session session = this.sessionFactory.getCurrentSession();
-        List<Book> bookList = session.createQuery("from Books").list();
+        List<Book> bookList = session.createQuery("from Book").list();
 
         for (Book book : bookList) {
             logger.info("Book lsit " + book);
@@ -67,10 +67,5 @@ public class BookDaoImpl implements BookDao {
         }
 
         logger.info("Book successfully removed " + book);
-    }
-
-    @Override
-    public Collection<Book> getBooks(String search) {
-        return null;
     }
 }

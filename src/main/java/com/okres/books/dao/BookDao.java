@@ -14,5 +14,4 @@ public interface BookDao {
     public List<Book> listBooks();
     public Book getBookByID(int id);
     public void removeBook(int id);
-    Collection<Book> getBooks(String search);
 }
