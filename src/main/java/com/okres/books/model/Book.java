@@ -1,7 +1,6 @@
-package model;
+package com.okres.books.model;
 
 import javax.persistence.*;
-import java.util.Set;
 
 /**
  * Created by Alex on 20.07.2017.

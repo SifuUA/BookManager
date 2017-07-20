@@ -1,6 +1,6 @@
-package dao;
+package com.okres.books.dao;
 
-import model.Book;
+import com.okres.books.model.Book;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.slf4j.Logger;

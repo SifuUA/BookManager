@@ -1,7 +1,7 @@
-package service;
+package com.okres.books.service;
 
-import dao.BookDao;
-import model.Book;
+import com.okres.books.dao.BookDao;
+import com.okres.books.model.Book;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.Transient;
